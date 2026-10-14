@@ -3,33 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#fff8f1" />
     <meta
       name="description"
-      content="Moxy.art is a New York-based creative marketing studio specializing in food content and restaurant marketing."
+      content="Moxy.art is a Brooklyn restaurant-marketing studio. Social content, short video and local Meta ads for restaurants that want more full tables."
     />
-    <title>Moxy.art — Art, Digital &amp; Marketing</title>
+    <title>Moxy.art — Restaurant marketing with moxie</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="page-shell">
+    <div class="container header-wrap">
       <header class="site-header">
-        <a class="wordmark" href="#top" aria-label="Moxy.art home">Moxy.art</a>
+        <a class="brand" href="#top" aria-label="Moxy.art home">
+          <svg class="brand-mark" viewBox="0 0 256 256" aria-hidden="true">
+            <path fill="currentColor" fill-rule="evenodd" d="M24 212 69 44h31l28 61 28-61h31l45 168h-37l-27-100.8-25 52.8h-30l-25-52.8-27 100.8H24Z M116 44h24l-12 28-12-28Z" />
+          </svg>
+          <span class="wordmark">Moxy.art</span>
+        </a>
 
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="#work">WHAT WE DID</a>
-          <a href="#services">WHAT WE OFFER</a>
+          <a href="#services">Services</a>
+          <a href="#process">How it works</a>
+          <a href="#work">Work</a>
         </nav>
 
         <div class="header-actions">
-          <a class="chat-button" href="mailto:moxyart664@gmail.com">LET’S CHAT</a>
+          <a class="btn btn-primary btn-pill" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book a call</a>
           <button
             class="menu-button"
             type="button"
@@ -42,60 +49,170 @@
         </div>
 
         <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
-          <a href="#work">WHAT WE DID</a>
-          <a href="#services">WHAT WE OFFER</a>
-          <a href="mailto:moxyart664@gmail.com">LET’S CHAT</a>
+          <a href="#services">Services</a>
+          <a href="#process">How it works</a>
+          <a href="#work">Work</a>
+          <a href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book a call</a>
         </nav>
       </header>
-
-      <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-top">
-            <h1 id="hero-title">Art Digital</h1>
-            <p class="hero-specialty">Specialized in <br />promoting food content <br />and restaurant marketing</p>
-          </div>
-          <div class="hero-bottom">
-            <p class="hero-location">Based in <br />New York</p>
-            <span class="hero-slash" aria-hidden="true">/</span>
-            <p class="hero-marketing">Marketing</p>
-          </div>
-        </section>
-
-        <section class="work-grid" id="work" aria-label="Selected work">
-          <a class="work-tile tile-gyuzo" href="#contact" aria-label="Discuss a project like Gyuzo BBQ">
-            <span>Gyuzo BBQ</span>
-          </a>
-
-          <a class="work-tile tile-nan-xiang" href="#contact" aria-label="Discuss a project like Nan Xiang Dumplings">
-            <span>Nan Xiang Dumplings</span>
-          </a>
-
-          <div class="work-intro" id="services">
-            <p>Whether you’re an emerging <br />artist or an established creator, <br />we offer tailored solutions that <br />amplify your reach.</p>
-            <a href="#contact">Explore All <span aria-hidden="true">↗</span></a>
-          </div>
-
-          <a class="work-tile tile-musa" href="#contact" aria-label="Discuss a project like MuSa Bar">
-            <span>MuSa Bar</span>
-          </a>
-
-          <a class="work-tile tile-devil" href="#contact" aria-label="Discuss a project like Devil Chicken bubble tea">
-            <span>Devil Chicken bubble tea</span>
-          </a>
-        </section>
-
-        <section class="contact" id="contact" aria-labelledby="contact-title">
-          <p class="contact-eyebrow">HAVE A PROJECT IN MIND?</p>
-          <h2 id="contact-title">Let’s make something memorable.</h2>
-          <p>Tell us what you’re working on. We’d love to hear about it.</p>
-          <a class="contact-link" href="mailto:moxyart664@gmail.com">moxyart664@gmail.com <span aria-hidden="true">↗</span></a>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <span>Moxy.art</span>
-        <span>New York · Art, digital &amp; marketing</span>
-      </footer>
     </div>
+
+    <main id="top">
+      <section class="container hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="display" aria-label="Marketing with moxie.">
+            <span class="line" aria-hidden="true"><span>Marketing</span></span>
+            <span class="line" aria-hidden="true"><span><em>with</em> moxie.</span></span>
+          </h1>
+        </div>
+        <div class="hero-side" data-reveal>
+          <p class="lead">Social content, short video and local Meta ads for restaurants that want more full tables — without wasting a dollar. Every result explained in plain English, every month.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book a free 20‑min call</a>
+          </div>
+        </div>
+        <a class="spin-badge" href="#contact" aria-label="Book a free call">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="badge-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+            <text><textPath href="#badge-circle">Free 20‑min call · Brooklyn, NY · Moxy.art ·</textPath></text>
+          </svg>
+          <span class="spin-badge-arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <div class="marquee" aria-label="Clients: Gyuzo BBQ, Nan Xiang Dumplings, MuSa Bar, Devil Chicken bubble tea">
+        <div class="marquee-track" aria-hidden="true">
+          <span>Gyuzo BBQ</span><i>✦</i><span>Nan Xiang Dumplings</span><i>✦</i><span>MuSa Bar</span><i>✦</i><span>Devil Chicken bubble tea</span><i>✦</i>
+          <span>Gyuzo BBQ</span><i>✦</i><span>Nan Xiang Dumplings</span><i>✦</i><span>MuSa Bar</span><i>✦</i><span>Devil Chicken bubble tea</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="container services" id="services" aria-labelledby="services-title">
+        <div class="section-head" data-reveal>
+          <p class="label">What we offer</p>
+          <h2 id="services-title" class="heading">Everything your restaurant needs online</h2>
+        </div>
+        <div class="fan">
+          <article class="fan-card" style="--tilt: -6deg; --i: 0">
+            <div class="card-media" aria-hidden="true">[Work image]</div>
+            <div class="card-body">
+              <h3>Social content</h3>
+              <p>Posts, Reels and a monthly calendar, shot and written for you.</p>
+              <ul class="tags"><li>Reels</li><li>Photo</li><li>Calendar</li></ul>
+            </div>
+          </article>
+          <article class="fan-card fan-card-blue" style="--tilt: 3deg; --i: 1">
+            <div class="card-media" aria-hidden="true">[Work image]</div>
+            <div class="card-body">
+              <h3>Short video</h3>
+              <p>Reels and TikToks that show the food, the room and the people.</p>
+              <ul class="tags"><li>Reels</li><li>TikTok</li></ul>
+            </div>
+          </article>
+          <article class="fan-card" style="--tilt: -2deg; --i: 2">
+            <div class="card-media" aria-hidden="true">[Work image]</div>
+            <div class="card-body">
+              <h3>Local Meta ads</h3>
+              <p>Small, targeted budgets aimed at the people in your neighborhood.</p>
+              <ul class="tags"><li>Facebook</li><li>Instagram</li></ul>
+            </div>
+          </article>
+          <article class="fan-card fan-card-ink" style="--tilt: 6deg; --i: 3">
+            <div class="card-media" aria-hidden="true">[Work image]</div>
+            <div class="card-body">
+              <h3>Monthly report</h3>
+              <p>One page, plain English: what worked and what changes next.</p>
+              <ul class="tags"><li>Results</li><li>Next steps</li></ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container split" aria-label="Why Moxy.art">
+        <div class="feature-dark" data-reveal>
+          <h2 class="heading-md">Sound familiar?</h2>
+          <ul class="arrow-list">
+            <li>Posting every day, but tables stay empty</li>
+            <li>Ad money spent with no clear results</li>
+            <li>No time to shoot, write and schedule</li>
+            <li>Reports full of jargon nobody reads</li>
+          </ul>
+        </div>
+        <div class="feature-light" id="process" data-reveal>
+          <h2 class="heading-md">How it works</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-num" aria-hidden="true">1</span>
+              <div><h3>Free 20‑min call</h3><p>We look at your posts, ads and goals together.</p></div>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">2</span>
+              <div><h3>30‑day plan</h3><p>A content and ad plan you approve before anything goes live.</p></div>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">3</span>
+              <div><h3>Launch &amp; report</h3><p>We run it, then show you the results every month.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="container manifesto" aria-labelledby="manifesto-label">
+        <p class="manifesto-label" id="manifesto-label">[ Our promise ]</p>
+        <p class="manifesto-text" data-manifesto>
+          We fill tables
+          <span class="inline-chip" aria-hidden="true"><svg viewBox="0 0 256 256"><path fill="currentColor" fill-rule="evenodd" d="M24 212 69 44h31l28 61 28-61h31l45 168h-37l-27-100.8-25 52.8h-30l-25-52.8-27 100.8H24Z M116 44h24l-12 28-12-28Z" /></svg></span>
+          when your food looks as good on a phone
+          <span class="inline-arrow" aria-hidden="true">↗</span>
+          as it does on the plate. Every post, every ad, every dollar — explained in
+          <span class="circled">plain English<svg class="circle-mark" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M150 8 C 255 6, 296 30, 292 52 C 287 82, 210 94, 140 92 C 60 90, 6 74, 8 48 C 10 22, 80 8, 168 12" /></svg></span>,
+          every month.
+        </p>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="container work-head" data-reveal>
+          <p class="work-kicker">Food people stop scrolling for.</p>
+          <h2 id="work-title" class="display display-md">Recent <em>work</em></h2>
+        </div>
+        <div class="container stack">
+          <a class="stack-card" href="#contact" style="--frame: #fff8f1">
+            <span class="stack-media" aria-hidden="true">[Project image]</span>
+            <span class="stack-caption"><strong>Gyuzo BBQ</strong><span>Restaurant · Social</span></span>
+          </a>
+          <a class="stack-card" href="#contact" style="--frame: #006eff">
+            <span class="stack-media" aria-hidden="true">[Project image]</span>
+            <span class="stack-caption"><strong>Nan Xiang Dumplings</strong><span>Restaurant · Social</span></span>
+          </a>
+          <a class="stack-card" href="#contact" style="--frame: #e2e8f0">
+            <span class="stack-media" aria-hidden="true">[Project image]</span>
+            <span class="stack-caption"><strong>MuSa Bar</strong><span>Bar · Social</span></span>
+          </a>
+          <a class="stack-card" href="#contact" style="--frame: #fff8f1">
+            <span class="stack-media" aria-hidden="true">[Project image]</span>
+            <span class="stack-caption"><strong>Devil Chicken bubble tea</strong><span>Café · Social</span></span>
+          </a>
+        </div>
+        <div class="container work-foot">
+          <a class="btn btn-primary" href="#contact">Start yours ↗</a>
+        </div>
+      </section>
+
+      <section class="container contact" id="contact" aria-labelledby="contact-title">
+        <div data-reveal>
+          <p class="label">Have a project in mind?</p>
+          <h2 id="contact-title" class="display display-sm">Let’s make your <em>restaurant</em> the talk of the block.</h2>
+        </div>
+        <div class="contact-actions" data-reveal>
+          <a class="btn btn-primary" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book a free 20‑min call</a>
+          <a class="arrow-link" href="mailto:moxyart664@gmail.com">moxyart664@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container site-footer">
+      <span>© 2026 Moxy.art</span>
+      <span>Brooklyn, NY · Restaurant marketing</span>
+    </footer>
   </body>
 </html>
