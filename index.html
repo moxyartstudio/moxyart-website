@@ -103,11 +103,9 @@
         </div>
       </div>
 
-      <!-- RECENT WORK: drifting row of video cards.
-           To add a real video, put the file in an /media folder and replace the
-           <span class="media-ph"> line in a card with:
-           <video class="lazy-video" src="media/gyuzo.mp4" muted loop playsinline preload="none"></video>
-           It will play by itself when it scrolls into view. -->
+      <!-- RECENT WORK: drifting row of video cards. Each card's <video> plays
+           by itself when it scrolls into view. To add one, put the file in media/
+           and copy an existing card. -->
       <section class="work" id="work" aria-labelledby="work-title">
         <div class="container section-top" data-reveal>
           <h2 id="work-title" class="title-mix"><span class="serif">Some of our</span> recent work:</h2>
@@ -117,41 +115,55 @@
         <div class="rail">
           <div class="rail-track">
             <div class="rail-set">
-              <article class="vcard" style="--w: 300px; --h: 520px; --y: 0px">
-                <div class="media" style="--bg: linear-gradient(160deg, #1b1a4a, #006eff)">
+              <article class="vcard" style="--w: 290px; --h: 520px; --y: 0px">
+                <div class="media" style="--bg: #000000">
+                  <video class="lazy-video" src="media/gyuzo-summer-cocktails.mp4" muted loop playsinline preload="none" aria-label="Summer cocktails at Gyuzo"></video>
                   <span class="media-ph">[Video placeholder]</span>
-                  <span class="chip"><i></i>AI video</span>
+                  <span class="chip"><i></i>Summer cocktails</span>
                   <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
                 </div>
                 <span class="tag">Gyuzo BBQ</span>
-                <p>[One line about the Gyuzo BBQ project]</p>
+                <p>Summer cocktails at Gyuzo</p>
               </article>
-              <article class="vcard" style="--w: 420px; --h: 420px; --y: 60px">
-                <div class="media" style="--bg: linear-gradient(160deg, #ffb38a, #ff9ec4)">
+              <article class="vcard" style="--w: 420px; --h: 420px; --y: 40px">
+                <div class="media" style="--bg: #000000">
+                  <video class="lazy-video" src="media/gyuzo-birthday-celebration.mp4" muted loop playsinline preload="none" aria-label="Birthday celebration at Gyuzo"></video>
                   <span class="media-ph">[Video placeholder]</span>
-                  <span class="chip"><i></i>Reel</span>
+                  <span class="chip"><i></i>Birthday</span>
                   <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
                 </div>
-                <span class="tag">Nan Xiang Dumplings</span>
-                <p>[One line about the Nan Xiang project]</p>
+                <span class="tag">Gyuzo BBQ</span>
+                <p>Birthday celebration at Gyuzo</p>
               </article>
-              <article class="vcard" style="--w: 560px; --h: 340px; --y: 0px">
-                <div class="media" style="--bg: linear-gradient(160deg, #0d0d0d, #4b2a6a)">
+              <article class="vcard" style="--w: 420px; --h: 420px; --y: 0px">
+                <div class="media" style="--bg: #000000">
+                  <video class="lazy-video" src="media/gyuzo-birthday-free-meal.mp4" muted loop playsinline preload="none" aria-label="Birthday eats free"></video>
+                  <span class="media-ph">[Video placeholder]</span>
+                  <span class="chip"><i></i>Birthday</span>
+                  <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
+                </div>
+                <span class="tag">Gyuzo BBQ</span>
+                <p>Birthday eats free</p>
+              </article>
+              <article class="vcard" style="--w: 420px; --h: 420px; --y: 40px">
+                <div class="media" style="--bg: #000000">
+                  <video class="lazy-video" src="media/gyuzo-happy-hour-50off.mp4" muted loop playsinline preload="none" aria-label="All-day happy hour, 50% off"></video>
+                  <span class="media-ph">[Video placeholder]</span>
+                  <span class="chip"><i></i>Happy hour</span>
+                  <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
+                </div>
+                <span class="tag">Gyuzo BBQ</span>
+                <p>All-day happy hour, 50% off</p>
+              </article>
+              <article class="vcard" style="--w: 290px; --h: 520px; --y: 0px">
+                <div class="media" style="--bg: #000000">
+                  <video class="lazy-video" src="media/gyuzo-meat-lovers-39.mp4" muted loop playsinline preload="none" aria-label="Unlimited premium cuts for $39.50"></video>
                   <span class="media-ph">[Video placeholder]</span>
                   <span class="chip"><i></i>Ad</span>
                   <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
                 </div>
-                <span class="tag">MuSa Bar</span>
-                <p>[One line about the MuSa Bar project]</p>
-              </article>
-              <article class="vcard" style="--w: 340px; --h: 480px; --y: 40px">
-                <div class="media" style="--bg: linear-gradient(160deg, #b8a6ff, #ffe27a)">
-                  <span class="media-ph">[Video placeholder]</span>
-                  <span class="chip"><i></i>AI video</span>
-                  <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
-                </div>
-                <span class="tag">Devil Chicken bubble tea</span>
-                <p>[One line about the Devil Chicken project]</p>
+                <span class="tag">Gyuzo BBQ</span>
+                <p>Unlimited premium cuts for $39.50</p>
               </article>
             </div>
             <!-- script.js copies the set above here so the row loops seamlessly -->
