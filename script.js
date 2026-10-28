@@ -35,30 +35,35 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ---------- Header turns cream after the hero starts scrolling ----------
+// ---------- Header turns cream after you start scrolling; hero fades away ----------
+// Styles are written straight onto the element (not via a CSS variable) so only
+// this element recalculates, not every word inside it.
 const header = document.querySelector('.site-header');
 const hero = document.querySelector('.hero');
 const heroBody = document.querySelector('.hero-body');
+let lastHeroP = -1;
 onFrame(() => {
   const y = window.scrollY;
   header.classList.toggle('is-scrolled', y > 40);
-  if (!reduceMotion) {
-    // 0 at the top, 1 once the hero has mostly scrolled away.
-    const p = Math.min(Math.max(y / (hero.offsetHeight * 0.75), 0), 1);
-    heroBody.style.setProperty('--hero-p', p.toFixed(3));
-  }
+  if (reduceMotion) return;
+  // 0 at the top, 1 once the hero has mostly scrolled away.
+  const p = Math.min(Math.max(y / (hero.offsetHeight * 0.75), 0), 1);
+  if (Math.abs(p - lastHeroP) < 0.001) return;
+  lastHeroP = p;
+  heroBody.style.opacity = String(Math.max(1 - p * 1.2, 0));
+  heroBody.style.transform = `translateY(${(p * -80).toFixed(1)}px) scale(${(1 - p * 0.04).toFixed(4)})`;
 });
 
-// ---------- Hero: an extra color blob follows the pointer ----------
+// ---------- Hero: an extra color blob eases toward the pointer ----------
 if (finePointer && !reduceMotion) {
   const cursorBlob = hero.querySelector('.cursor-blob');
   const aura = hero.querySelector('.aura');
   let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
   const follow = () => {
+    // Moves 8% of the remaining distance each frame, so it trails the cursor with momentum.
     cx += (tx - cx) * 0.08;
     cy += (ty - cy) * 0.08;
-    cursorBlob.style.setProperty('--cx', `${cx}px`);
-    cursorBlob.style.setProperty('--cy', `${cy}px`);
+    cursorBlob.style.transform = `translate(${cx.toFixed(1)}px, ${cy.toFixed(1)}px) translate(-50%, -50%)`;
     if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) requestAnimationFrame(follow);
     else running = false;
   };
@@ -85,9 +90,9 @@ if (railSet && !reduceMotion) {
   railTrack.appendChild(copy);
 }
 
-// ---------- Reveal on scroll ----------
+// ---------- Reveal on scroll (with reduced motion it is a plain fade, see CSS) ----------
 const revealTargets = document.querySelectorAll('[data-reveal]');
-if (reduceMotion || !('IntersectionObserver' in window)) {
+if (!('IntersectionObserver' in window)) {
   revealTargets.forEach((el) => el.classList.add('is-in'));
 } else {
   const revealer = new IntersectionObserver(
@@ -104,14 +109,20 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealTargets.forEach((el) => revealer.observe(el));
 }
 
-// ---------- Videos play only while on screen (for when real clips are added) ----------
+// ---------- Videos play only while on screen ----------
+// With reduced motion they never autoplay: they show their still frame and play controls instead.
 const videos = document.querySelectorAll('video.lazy-video');
-if (videos.length && 'IntersectionObserver' in window) {
+if (reduceMotion) {
+  videos.forEach((video) => {
+    video.controls = true;
+    video.preload = 'metadata';
+  });
+} else if (videos.length && 'IntersectionObserver' in window) {
   const player = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        if (entry.isIntersecting && !reduceMotion) {
+        if (entry.isIntersecting) {
           if (video.preload === 'none') video.preload = 'auto';
           video.play().catch(() => {});
         } else {
@@ -127,12 +138,15 @@ if (videos.length && 'IntersectionObserver' in window) {
 // ---------- Showreel grows to full size as it scrolls in ----------
 const showreel = document.querySelector('[data-grow]');
 if (showreel && !reduceMotion) {
+  let lastGrow = -1;
   onFrame(() => {
     const rect = showreel.getBoundingClientRect();
     const vh = window.innerHeight;
     // 0 when its top enters the bottom of the screen, 1 when its top reaches 20% from the top.
     const p = Math.min(Math.max((vh - rect.top) / (vh * 0.8), 0), 1);
-    showreel.style.setProperty('--grow', p.toFixed(3));
+    if (Math.abs(p - lastGrow) < 0.001) return;
+    lastGrow = p;
+    showreel.style.transform = `scale(${(0.88 + p * 0.12).toFixed(4)})`;
   });
 }
 
@@ -144,35 +158,35 @@ if (finePointer && !reduceMotion) {
       const box = media.getBoundingClientRect();
       const x = (e.clientX - box.left) / box.width - 0.5;
       const y = (e.clientY - box.top) / box.height - 0.5;
-      media.style.setProperty('--ry', `${(x * 14).toFixed(2)}deg`);
-      media.style.setProperty('--rx', `${(y * -14).toFixed(2)}deg`);
+      media.style.transform = `perspective(900px) rotateX(${(y * -14).toFixed(2)}deg) rotateY(${(x * 14).toFixed(2)}deg)`;
     });
     card.addEventListener('pointerleave', () => {
-      media.style.setProperty('--ry', '0deg');
-      media.style.setProperty('--rx', '0deg');
+      media.style.transform = '';
     });
   });
 }
 
 // ---------- Services: one at a time, "Next" cycles through ----------
 const services = [
-  { n: '01', title: 'AI video & Reels', lead: 'Made for the phone.', body: 'Short videos of your food, your room and your people, made faster with AI.', bg: 'linear-gradient(150deg, #1b1a4a 0%, #006eff 60%, #b8a6ff 100%)' },
-  { n: '02', title: 'Social content', lead: 'Done for you.', body: 'Posts, Reels and a monthly calendar, shot and written for you.', bg: 'linear-gradient(150deg, #ffb38a 0%, #ff9ec4 55%, #b8a6ff 100%)' },
-  { n: '03', title: 'Local Meta ads', lead: 'Small budgets, local reach.', body: 'Targeted ads aimed at the people in your neighborhood.', bg: 'linear-gradient(150deg, #ffe27a 0%, #ffb38a 50%, #006eff 100%)' },
-  { n: '04', title: 'Monthly report', lead: 'Plain English.', body: 'One page: what worked and what changes next.', bg: 'linear-gradient(150deg, #000000 0%, #2a2350 60%, #006eff 100%)' },
+  { title: 'Social Media Management', body: 'Keep your business active, engaging, and worth following. We handle content planning, creation, posting, and social strategy.', bg: 'linear-gradient(150deg, #ffb38a 0%, #ff9ec4 55%, #b8a6ff 100%)' },
+  { title: 'AI Photography & Video', body: 'Professional-looking product photography, food visuals, promotional videos, and creative campaigns — without the cost and complexity of traditional production.', bg: 'linear-gradient(150deg, #1b1a4a 0%, #006eff 60%, #b8a6ff 100%)' },
+  { title: 'Website Design & Development', body: 'Beautiful, easy-to-use websites designed to turn visitors into customers.', bg: 'linear-gradient(150deg, #b8a6ff 0%, #dfe3ff 50%, #006eff 100%)' },
+  { title: 'SEO, GEO & Local Search', body: 'Help customers discover your business on Google, Maps, and AI-powered search platforms.', bg: 'linear-gradient(150deg, #006eff 0%, #6fd3c1 55%, #ffe27a 100%)' },
+  { title: 'Advertising & Promotions', body: 'Targeted advertising, seasonal promotions, and creative campaigns designed to attract customers and generate interest.', bg: 'linear-gradient(150deg, #ffe27a 0%, #ffb38a 50%, #006eff 100%)' },
+  { title: 'Branding & Creative Design', body: 'Menus, posters, promotional materials, and visual identities that make your business look as good as the experience you deliver.', bg: 'linear-gradient(150deg, #000000 0%, #2a2350 60%, #ff9ec4 100%)' },
 ];
 const svcSection = document.querySelector('.services');
 if (svcSection) {
   const part = (name) => svcSection.querySelector(`[data-svc="${name}"]`);
   let index = 0;
+  let swapTimer = 0;
   const show = (i) => {
     const s = services[i];
     part('count').textContent = String(i + 1);
-    part('n').textContent = s.n;
+    part('n').textContent = String(i + 1).padStart(2, '0');
     part('title').textContent = s.title;
-    part('lead').textContent = s.lead;
     part('body').textContent = s.body;
-    part('caption').textContent = `[${s.title} — example video]`;
+    part('caption').textContent = `[${s.title} — example]`;
     part('media').style.setProperty('--bg', s.bg);
   };
   part('next').addEventListener('click', () => {
@@ -181,15 +195,17 @@ if (svcSection) {
       show(index);
       return;
     }
+    // Fast clicks never wait: each one restarts the short exit and lands on the latest service.
+    clearTimeout(swapTimer);
     svcSection.classList.add('is-swapping');
-    setTimeout(() => {
+    swapTimer = setTimeout(() => {
       show(index);
       svcSection.classList.remove('is-swapping');
-    }, 280);
+    }, 150);
   });
 }
 
-// ---------- Manifesto: words light up in reading order as you scroll ----------
+// ---------- "Your business is unique": words light up in reading order as you scroll ----------
 const manifesto = document.querySelector('[data-manifesto]');
 if (manifesto) {
   const units = [];
