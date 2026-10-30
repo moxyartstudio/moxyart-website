@@ -10,7 +10,6 @@
   --ink-60: rgba(0, 0, 0, 0.6);
   --ash: #e2e8f0;
   --blue: #006eff;
-  --blue-deep: #0058cc;
   --on-blue: #ffffff;
 
   /* Aura colors: only for the moving backgrounds and video placeholders */
@@ -24,7 +23,6 @@
   --font-display: "Instrument Serif", Georgia, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-tag: 12px;
   --radius-nav: 24px;
   --radius-card: 36px;
   --radius-image: 48px;
@@ -371,9 +369,7 @@ figure { margin: 0; }
   pointer-events: none;
 }
 .media > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.media:has(video)::after,
-.media:has(video) .media-ph,
-.media:has(video) .play { display: none; }
+.media:has(video)::after { display: none; }
 @keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
 .media-ph {
   position: absolute;
