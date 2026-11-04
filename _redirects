@@ -1,2 +1,0 @@
-# Send the Netlify address to the real domain
-https://moxyart.netlify.app/* https://moxyart.studio/:splat 301!
