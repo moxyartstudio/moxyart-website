@@ -233,7 +233,7 @@ figure { margin: 0; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: min(24px, 3vh);
   text-align: center;
   transform-origin: 50% 50%;
   will-change: opacity, transform;
@@ -241,7 +241,7 @@ figure { margin: 0; }
 .hero-title {
   margin: 0 auto;
   max-width: 1040px;
-  font-size: clamp(44px, 6vw, 96px);
+  font-size: clamp(40px, min(6vw, 11vh), 96px);
   font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.035em;
