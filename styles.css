@@ -28,6 +28,7 @@
   --radius-image: 48px;
 
   --gutter: clamp(16px, 3vw, 40px);
+  --header-h: 96px;
   /* Strong curves: ease-out for entering/exiting and feedback, ease-in-out for on-screen movement */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -115,36 +116,32 @@ figure { margin: 0; }
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
-  padding: 16px var(--gutter) 0;
-  pointer-events: none;
+  padding: 0 var(--gutter);
+  transition: background-color 300ms ease;
+}
+.site-header.is-scrolled {
+  background: rgba(255, 248, 241, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .header-inner {
   position: relative;
   width: min(100%, 1280px);
+  min-height: var(--header-h);
   margin-inline: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
-  padding: 10px 10px 10px 20px;
-  border: 1px solid transparent;
-  border-radius: var(--radius-nav);
-  pointer-events: auto;
-  transition: background-color 300ms ease, border-color 300ms ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 }
-.site-header.is-scrolled .header-inner {
-  background: rgba(255, 248, 241, 0.88);
-  border-color: var(--ash);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 30px; height: 30px; }
-.wordmark { font-family: var(--font-display); font-size: 30px; line-height: 1; }
-.desktop-nav { display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
-.header-actions { display: flex; align-items: center; gap: 8px; }
+.brand { justify-self: start; }
+.wordmark { font-family: var(--font-display); font-size: 28px; line-height: 1; letter-spacing: -0.01em; }
+.desktop-nav { justify-self: center; display: flex; gap: 48px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.header-actions { justify-self: end; display: flex; align-items: center; gap: 16px; }
+.btn-chat { min-height: 40px; padding: 10px 18px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .menu-button {
-  display: none;
+  display: flex;
   width: 44px;
   height: 44px;
   border: 0;
@@ -163,8 +160,8 @@ figure { margin: 0; }
 .mobile-menu {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
   right: 0;
+  width: min(320px, 100%);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -213,37 +210,38 @@ figure { margin: 0; }
 
 /* ---------- Hero ---------- */
 .hero {
+  /* The showreel's size, so the copy above it can leave exactly its top third on screen */
+  --video-w: min(880px, calc(100vw - 2 * var(--gutter)));
+  --video-h: calc(var(--video-w) * 9 / 16);
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
   overflow: hidden;
   background: var(--aura-base);
-  display: flex;
-  flex-direction: column;
-  padding-top: 96px;
-}
-.hero-body,
-.hero-foot {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 1360px);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-top: var(--header-h);
+  padding-bottom: 48px;
 }
 /* Fades and lifts as you scroll away; script.js writes opacity/transform here directly */
 .hero-body {
-  flex: 1;
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1360px);
+  min-height: calc(100vh - var(--header-h) - var(--video-h) / 3);
+  min-height: calc(100svh - var(--header-h) - var(--video-h) / 3);
+  margin-inline: auto;
+  padding: 32px var(--gutter);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 28px;
-  transform-origin: 0 50%;
+  gap: 24px;
+  text-align: center;
+  transform-origin: 50% 50%;
   will-change: opacity, transform;
 }
 .hero-title {
-  margin: 0;
-  max-width: 1180px;
-  font-size: clamp(50px, 7.4vw, 120px);
+  margin: 0 auto;
+  max-width: 1040px;
+  font-size: clamp(44px, 6vw, 96px);
   font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.035em;
@@ -269,65 +267,18 @@ figure { margin: 0; }
   to { opacity: 1; transform: none; filter: blur(0); }
 }
 .hero-sub {
-  margin: 0;
-  max-width: 560px;
-  font-size: clamp(19px, 1.8vw, 24px);
-  line-height: 1.35;
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.4;
   color: var(--ink-78);
   animation: rise 800ms var(--ease-out) 640ms both;
 }
 
-.hero-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 24px 40px;
-  padding-top: 32px;
-  padding-bottom: 40px;
-  animation: rise 800ms var(--ease-out) 760ms both;
-}
-.scroll-cue {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.cue-line { position: relative; width: 1.5px; height: 56px; background: rgba(0, 0, 0, 0.15); overflow: hidden; }
-.cue-line::after { content: ""; position: absolute; inset: 0; background: var(--ink); animation: cue 2.2s var(--ease-in-out) infinite; }
-@keyframes cue {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
-}
-.hero-note { max-width: 460px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.hero-note p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--ink-78); }
-.hero-note strong { color: var(--ink); font-weight: 600; }
-.hero-note .btn { margin-top: 6px; }
-.hero-eyebrow { margin: 0 0 20px; font-size: 15px; color: var(--ink-72); animation: rise 800ms var(--ease-out) 40ms both; }
-.hero-eyebrow .serif { font-size: 1.35em; color: var(--ink); }
+.hero-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 8px; animation: rise 800ms var(--ease-out) 760ms both; }
 .fine-print { margin: 0; font-size: 13px; color: var(--ink-60); }
-
-.spin-badge {
-  position: relative;
-  flex: none;
-  width: 132px;
-  height: 132px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--cream);
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  transition: transform 200ms var(--ease-out), background-color 200ms ease, color 200ms ease;
-}
-.spin-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 14s linear infinite; }
-.spin-badge text { fill: currentColor; font-size: 11.5px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.hero-video { position: relative; z-index: 1; width: var(--video-w); margin-inline: auto; }
+.hero .showreel { height: var(--video-h); }
 
 /* ---------- Now booking strip ---------- */
 .notice { border-bottom: 1px solid var(--ash); background: var(--cream); }
@@ -725,12 +676,10 @@ figure { margin: 0; }
   .btn-dark:hover { background: var(--blue); color: var(--on-blue); }
   .ink-link:hover,
   .word.link:hover { color: var(--blue); }
-  .spin-badge:hover { background: var(--blue); color: var(--on-blue); }
   .steps li:hover { border-color: var(--blue); }
   .rail:hover .rail-track { animation-play-state: paused; }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .spin-badge:hover { transform: scale(1.06) rotate(-6deg); }
   .next-btn:hover svg { transform: translateX(4px); }
 }
 
@@ -738,7 +687,6 @@ figure { margin: 0; }
 .btn:active,
 .next-btn:active,
 .menu-button:active { transform: scale(0.97); }
-.spin-badge:active { transform: scale(0.95); }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1000px) {
@@ -750,19 +698,14 @@ figure { margin: 0; }
 /* ---------- Phone ---------- */
 @media (max-width: 760px) {
   .desktop-nav { display: none; }
-  .menu-button { display: flex; }
-  .header-actions .btn { display: none; }
-  .header-inner { padding: 8px 8px 8px 16px; }
-  .wordmark { font-size: 26px; }
-  .brand-mark { width: 26px; height: 26px; }
+  :root { --header-h: 72px; }
+  .header-inner { grid-template-columns: 1fr auto; }
+  .header-actions { gap: 8px; }
+  .wordmark { font-size: 24px; }
   .aura { inset: -30%; }
-  .hero { padding-top: 88px; }
-  .hero-body { gap: 20px; }
-  .hero-foot { align-items: flex-start; padding-bottom: 28px; gap: 24px; }
-  .scroll-cue { display: none; }
-  .hero-note { order: 2; flex-basis: 100%; }
-  .spin-badge { order: 1; width: 100px; height: 100px; font-size: 22px; }
-  .spin-badge text { font-size: 13px; }
+  /* A taller 4:5 video fills more of a phone screen than a wide one */
+  .hero { --video-h: calc(var(--video-w) * 5 / 4); padding-bottom: 32px; }
+  .hero-body { gap: 18px; }
   .rail-set { gap: 16px; padding-left: 16px; }
   .vcard { width: calc(var(--w) * 0.66); margin-top: calc(var(--y) * 0.66); gap: 10px; }
   .vcard .media { height: calc(var(--h) * 0.66); border-radius: 16px; }
