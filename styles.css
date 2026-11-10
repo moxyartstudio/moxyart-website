@@ -296,15 +296,15 @@ figure { margin: 0; }
   from { opacity: 0; transform: translateY(0.4em); filter: blur(6px); }
   to { opacity: 1; transform: none; filter: blur(0); }
 }
+.hero-title .line { display: block; }
 .hero-sub {
   margin: 0 auto;
-  max-width: 520px;
+  max-width: 680px;
   font-size: clamp(18px, 1.6vw, 20px);
   line-height: 1.4;
   color: var(--ink-78);
   animation: rise 800ms var(--ease-out) 640ms both;
 }
-
 .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 8px; animation: rise 800ms var(--ease-out) 760ms both; }
 .fine-print { margin: 0; font-size: 13px; color: var(--ink-60); }
 .hero-video { position: relative; z-index: 1; width: var(--video-w); margin-inline: auto; }
@@ -312,7 +312,7 @@ figure { margin: 0; }
 
 /* ---------- Ads page hero: Reels-style phone cards + client logos ---------- */
 .hero--ads { --video-h: 440px; }
-.hero--ads .hero-sub { max-width: 640px; }
+.hero--ads .hero-sub { max-width: 680px; }
 .hero-reels { position: relative; z-index: 1; }
 .hero-reels .rail { padding: 8px 0 0; }
 .reelcard { flex: none; width: 246px; margin-top: var(--y); }
@@ -539,6 +539,11 @@ figure { margin: 0; }
 /* ---------- Services carousel ---------- */
 .services { padding-block: clamp(64px, 8vw, 100px) 40px; }
 .services-head { margin-bottom: 40px; max-width: 900px; }
+.copy-block { display: flex; flex-direction: column; gap: 16px; max-width: 760px; margin-bottom: 36px; }
+.copy-block p { margin: 0; font-size: 18px; line-height: 1.5; color: var(--ink-72); }
+.steps.services-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.services-list h3 { font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.02em; }
+.services-list p { font-size: 16px; color: var(--ink-72); }
 .proof .clients { padding: 0 0 40px; }
 .clients .svc-num { font-size: clamp(56px, 7vw, 112px); line-height: 0.9; }
 .process-head { margin: 0; font-size: clamp(40px, 5vw, 72px); }
@@ -613,7 +618,8 @@ figure { margin: 0; }
 }
 .stats li { display: flex; flex-direction: column; gap: 8px; padding: 28px 0; border-top: 1px solid var(--ink); }
 .stat-num { font-family: var(--font-display); font-weight: 400; font-size: clamp(64px, 7vw, 96px); line-height: 0.9; color: var(--blue); }
-.stats span { max-width: 300px; font-size: 16px; line-height: 1.4; color: var(--ink-72); }
+.stats span { max-width: 36ch; font-size: 16px; line-height: 1.45; color: var(--ink-72); }
+.proof .lead { max-width: 420px; }
 .stats .stat-star { margin-left: 0.08em; font-size: 0.55em; vertical-align: 0.4em; color: inherit; }
 .case { margin: 32px 0 0; padding: clamp(28px, 4vw, 48px); border-radius: var(--radius-card); background: var(--ink); color: var(--cream); display: grid; gap: 20px; }
 .stars { margin: 0; font-size: 22px; letter-spacing: 0.12em; color: var(--butter); }
@@ -644,6 +650,17 @@ figure { margin: 0; }
 .steps p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--ink-60); }
 .js .steps li:nth-child(2) { transition-delay: 60ms; }
 .js .steps li:nth-child(3) { transition-delay: 120ms; }
+.js .steps li:nth-child(4) { transition-delay: 180ms; }
+.js .steps li:nth-child(5) { transition-delay: 240ms; }
+.js .steps li:nth-child(6) { transition-delay: 300ms; }
+
+/* ---------- FAQ ---------- */
+.faq { padding-block: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: 28px; }
+.faq-list { margin: 0; display: flex; flex-direction: column; }
+.faq-list div { display: grid; gap: 8px; padding: 24px 0; border-top: 1px solid var(--ink); }
+.faq-list div:last-child { border-bottom: 1px solid var(--ink); }
+.faq-list dt { font-size: clamp(20px, 2vw, 24px); font-weight: 600; letter-spacing: -0.02em; }
+.faq-list dd { margin: 0; max-width: 72ch; font-size: 16px; line-height: 1.5; color: var(--ink-72); }
 
 /* ---------- "Your business is unique" ---------- */
 .manifesto { padding-block: clamp(64px, 8vw, 120px); display: flex; flex-direction: column; align-items: center; gap: 40px; }
@@ -766,6 +783,7 @@ figure { margin: 0; }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1000px) {
+  .steps.services-list { grid-template-columns: 1fr 1fr; }
   .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reel-card:nth-child(odd) { --y: 0px !important; }
   .reel-card:nth-child(even) { --y: 48px !important; }
@@ -794,6 +812,7 @@ figure { margin: 0; }
   .reels { gap: 14px; padding-bottom: 64px; }
   .reel-card .media { border-width: 4px; border-radius: 22px; }
   .reel-card figcaption span { display: none; }
+  .steps.services-list { grid-template-columns: 1fr; }
   .services-grid { gap: 28px; }
   .svc-media { order: -1; height: 300px; border-radius: 28px; flex-basis: 100%; clip-path: inset(0 0 0 0 round 28px); }
   .services.is-swapping .svc-media { clip-path: inset(0 0 0 100% round 28px); }
