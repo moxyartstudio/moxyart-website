@@ -539,6 +539,9 @@ figure { margin: 0; }
 /* ---------- Services carousel ---------- */
 .services { padding-block: clamp(64px, 8vw, 100px) 40px; }
 .services-head { margin-bottom: 40px; max-width: 900px; }
+.proof .clients { padding: 0 0 40px; }
+.clients .svc-num { font-size: clamp(56px, 7vw, 112px); line-height: 0.9; }
+.process-head { margin: 0; font-size: clamp(40px, 5vw, 72px); }
 .services-grid {
   display: flex;
   flex-wrap: wrap;

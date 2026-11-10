@@ -175,22 +175,30 @@ const services = [
   { title: 'Advertising & Promotions', body: 'Targeted advertising, seasonal promotions, and creative campaigns designed to attract customers and generate interest.', bg: 'linear-gradient(150deg, #ffe27a 0%, #ffb38a 50%, #006eff 100%)' },
   { title: 'Branding & Creative Design', body: 'Menus, posters, promotional materials, and visual identities that make your business look as good as the experience you deliver.', bg: 'linear-gradient(150deg, #000000 0%, #2a2350 60%, #ff9ec4 100%)' },
 ];
+// Homepage shows clients in the same carousel. shortcut: clients 2–4 have [bracket] text until Alex sends what we did for them.
+const clients = [
+  { name: 'Gyuzo BBQ', title: 'Marketing', body: 'Keep your business active, engaging, and worth following. We handle content planning, creation, posting, and social strategy.', bg: 'linear-gradient(150deg, #ffb38a 0%, #ff9ec4 55%, #b8a6ff 100%)' },
+  { name: 'Nan Xiang Dumplings', title: 'AI video', body: '[What we made for Nan Xiang Dumplings]', bg: 'linear-gradient(150deg, #1b1a4a 0%, #006eff 60%, #b8a6ff 100%)' },
+  { name: 'MuSa Bar', title: 'Reels', body: '[What we made for MuSa Bar]', bg: 'linear-gradient(150deg, #b8a6ff 0%, #dfe3ff 50%, #006eff 100%)' },
+  { name: 'Devil Chicken', title: 'TikTok', body: '[What we made for Devil Chicken bubble tea]', bg: 'linear-gradient(150deg, #ffe27a 0%, #ffb38a 50%, #006eff 100%)' },
+];
 const svcSection = document.querySelector('.services');
 if (svcSection) {
   const part = (name) => svcSection.querySelector(`[data-svc="${name}"]`);
+  const items = svcSection.dataset.set === 'clients' ? clients : services;
   let index = 0;
   let swapTimer = 0;
   const show = (i) => {
-    const s = services[i];
+    const s = items[i];
     part('count').textContent = String(i + 1);
-    part('n').textContent = String(i + 1).padStart(2, '0');
+    part('n').textContent = s.name || String(i + 1).padStart(2, '0');
     part('title').textContent = s.title;
     part('body').textContent = s.body;
-    part('caption').textContent = `[${s.title} — example]`;
+    part('caption').textContent = s.name ? `[${s.name} — example video]` : `[${s.title} — example]`;
     part('media').style.setProperty('--bg', s.bg);
   };
   part('next').addEventListener('click', () => {
-    index = (index + 1) % services.length;
+    index = (index + 1) % items.length;
     if (reduceMotion) {
       show(index);
       return;
