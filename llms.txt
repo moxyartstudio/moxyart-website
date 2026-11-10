@@ -1,8 +1,8 @@
-# Moxy Art
+# MoxyArt Studio
 
 > AI creative studio in Brooklyn, NY for local businesses (restaurants, shops, and service businesses).
 
-Moxy Art offers AI-built websites, GEO / AI search visibility and local Google presence, an AI receptionist, AI automations and integrations, AI ads and commercials, and AI lead finding.
+MoxyArt Studio offers AI-built websites, GEO / AI search visibility and local Google presence, an AI receptionist, AI automations and integrations, AI ads and commercials, and AI lead finding.
 
 ## Services
 

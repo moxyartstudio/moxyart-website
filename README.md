@@ -1,6 +1,6 @@
-# Moxyart Marketing website
+# MoxyArt Studio website
 
-Source repository for the Moxyart Marketing website.
+Source repository for the MoxyArt Studio website.
 
 ## Status
 
