@@ -24,11 +24,17 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand wordmark" href="#top">MoxyArt Studio</a>
+        <a class="brand" href="#top" aria-label="MoxyArt Studio home">
+          <svg class="brand-mark" viewBox="0 0 256 256" aria-hidden="true">
+            <path fill="currentColor" fill-rule="evenodd" d="M24 212 69 44h31l28 61 28-61h31l45 168h-37l-27-100.8-25 52.8h-30l-25-52.8-27 100.8H24Z M116 44h24l-12 28-12-28Z" />
+          </svg>
+          <span class="wordmark">MoxyArt Studio</span>
+        </a>
 
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="ads.html">Ads &amp; Commercials</a>
         </nav>
 
         <div class="header-actions">
@@ -41,9 +47,10 @@
         <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
           <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="ads.html">Ads &amp; Commercials</a>
           <a href="#process">How it works</a>
           <a href="#contact">Contact</a>
-          <a href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book My Free 20-Min Call</a>
+          <a href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call</a>
         </nav>
       </div>
     </header>
@@ -73,12 +80,12 @@
           </h1>
           <p class="hero-sub">We make the photos, videos, posts and ads that get locals off their phones and through your door.</p>
           <div class="hero-cta">
-            <a class="btn btn-dark" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book My Free 20-Min Call</a>
+            <a class="btn btn-cta btn-lg" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call <span class="btn-arrow" aria-hidden="true">→</span></a>
             <p class="fine-print">You see a 30-day plan before anything goes live.</p>
           </div>
         </div>
 
-        <!-- Only the top third of the showreel shows on the first screen, so people scroll. -->
+        <!-- Two-thirds of the showreel shows on the first screen, so people scroll. -->
         <div class="hero-video">
           <div class="showreel" data-grow>
             <div class="aura" aria-hidden="true">
@@ -100,9 +107,29 @@
         <div class="container notice-inner">
           <span class="dot" aria-hidden="true"></span>
           <span><strong>Now booking</strong> — a free 20‑min call for local businesses.</span>
-          <a href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book My Free 20-Min Call ↗</a>
+          <a href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call ↗</a>
         </div>
       </div>
+
+      <!-- PROOF: Gyuzo results, right under the hero. Replace every [bracket]
+           with a verified number before this goes live. Add more brands by
+           copying a .case card. -->
+      <section class="proof container" id="proof" aria-labelledby="proof-title">
+        <div class="section-top" data-reveal>
+          <h2 id="proof-title" class="title-mix">Receipts, <span class="serif"><em>not adjectives.</em></span></h2>
+          <p class="lead">Real results from Gyuzo BBQ, a Japanese BBQ spot we market every month.</p>
+        </div>
+        <ul class="stats" data-reveal>
+          <li><strong class="stat-num">$[##]K</strong><span>in sales from our Gyuzo ads, [month]–[month] 2026</span></li>
+          <li><strong class="stat-num">[###]K</strong><span>views on Instagram, TikTok and Facebook</span></li>
+          <li><strong class="stat-num">4.8<span class="stat-star" aria-hidden="true">★</span></strong><span>Google rating from 1,058 reviews, Gyuzo West Nyack</span></li>
+        </ul>
+        <figure class="case" data-reveal>
+          <p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote>“[Real words from the Gyuzo owner, with permission]”</blockquote>
+          <figcaption><strong>[Owner name]</strong>, Owner, Gyuzo BBQ</figcaption>
+        </figure>
+      </section>
 
       <!-- INTRO -->
       <section class="intro container" id="intro" aria-labelledby="intro-title">
@@ -172,29 +199,6 @@
         </div>
       </section>
 
-      <!-- PROOF: real results only. Each [bracket] item is hidden until it has a
-           verified number; fill it in, then delete the word "hidden". -->
-      <section class="proof container" id="proof" aria-labelledby="proof-title">
-        <div class="section-top" data-reveal>
-          <h2 id="proof-title" class="title-mix">Receipts, <span class="serif"><em>not adjectives.</em></span></h2>
-          <p class="lead">Local businesses that let us make some noise.</p>
-        </div>
-        <ul class="stats" data-reveal>
-          <li hidden><strong class="stat-num">[##]K</strong><span>people reached by one Gyuzo ad in [month]</span></li>
-          <li hidden><strong class="stat-num">$[#.##]</strong><span>cost per [message / booking] on Meta</span></li>
-          <li hidden><strong class="stat-num">[##]%</strong><span>more [bookings / covers] during the [birthday / happy hour] promo</span></li>
-          <li><strong class="stat-num">4</strong><span>local brands: Gyuzo BBQ, Nan Xiang Dumplings, MuSa Bar, Devil Chicken</span></li>
-        </ul>
-        <article class="case" data-reveal hidden>
-          <h3>Gyuzo BBQ <span>Japanese BBQ</span></h3>
-          <dl>
-            <div><dt>The problem</dt><dd>[e.g. weeknights were slow]</dd></div>
-            <div><dt>What we made</dt><dd>[#] short videos and ads, including the “Birthday eats free” and $39.50 unlimited cuts campaigns</dd></div>
-            <div><dt>The result</dt><dd>[one real number from above]</dd></div>
-          </dl>
-          <blockquote>“[Real words from the Gyuzo owner, with permission]” <cite>[Name], Gyuzo BBQ</cite></blockquote>
-        </article>
-      </section>
 
       <!-- FINISHED CONTENT: showreel grows as it scrolls in, Reels float -->
       <section class="reel container" aria-labelledby="reel-title">
@@ -251,7 +255,7 @@
             <h3 class="svc-title svc-anim" data-svc="title">Social Media Management</h3>
             <p class="svc-body svc-anim" data-svc="body">Keep your business active, engaging, and worth following. We handle content planning, creation, posting, and social strategy.</p>
             <div class="svc-actions">
-              <a class="btn btn-dark" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book My Free 20-Min Call</a>
+              <a class="btn btn-cta" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call <span class="btn-arrow" aria-hidden="true">→</span></a>
               <button class="next-btn" type="button" data-svc="next">
                 Next
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
@@ -316,7 +320,7 @@
             <p class="contact-lead">Tell us about your shop. On a free 20-minute call we’ll look at your posts and ads with you and point out what’s leaving customers on the table.</p>
           </div>
           <div class="contact-actions" data-reveal>
-            <a class="btn btn-dark btn-lg" href="mailto:moxyart664@gmail.com?subject=Free%2020-minute%20call">Book My Free 20-Min Call</a>
+            <a class="btn btn-cta btn-lg" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call <span class="btn-arrow" aria-hidden="true">→</span></a>
             <p class="fine-print">No pressure, no jargon.</p>
             <a class="ink-link" href="mailto:moxyart664@gmail.com">moxyart664@gmail.com <span aria-hidden="true">↗</span></a>
           </div>
