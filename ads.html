@@ -58,7 +58,7 @@
 
     <main id="main">
       <!-- HERO: full screen, moving color background -->
-      <section class="hero" id="top" aria-labelledby="hero-title">
+      <section class="hero hero--ads" id="top" aria-labelledby="hero-title">
         <div class="aura" aria-hidden="true">
           <span class="blob b1"></span>
           <span class="blob b2"></span>
@@ -71,34 +71,101 @@
         <div class="hero-body">
           <h1 id="hero-title" class="hero-title">
             <span class="word">Your</span>
-            <a class="word link" href="#services">shop</a>
-            <span class="word serif">is</span>
-            <span class="word serif"><em>great.</em></span>
-            <span class="word">Your</span>
-            <a class="word link" href="#work"><em class="serif">feed</em></a>
-            <span class="word serif">should</span>
-            <span class="word serif"><em>prove&nbsp;it.</em></span>
+            <span class="word">shortcut&nbsp;to</span>
+            <span class="word serif"><em>winning&nbsp;ads</em></span>
           </h1>
-          <p class="hero-sub">We make the photos, videos, posts and ads that get locals off their phones and through your door.</p>
+          <p class="hero-sub">For DTC brands spending $100K+/month on Meta that need fresh ideas. We find new angles, turn them into high-quality ads, and use performance data to make the next batch better. Every week.</p>
           <div class="hero-cta">
             <a class="btn btn-cta btn-lg" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call <span class="btn-arrow" aria-hidden="true">→</span></a>
             <p class="fine-print">You see a 30-day plan before anything goes live.</p>
           </div>
+          <div class="logos">
+            <p class="logos-label">Trusted by world-class brands</p>
+            <div class="logos-mask">
+              <div class="logos-track">
+                <ul><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>[Client 1]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>[Client 2]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3 21 20H3Z"/></svg>[Client 3]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9Z"/></svg>[Client 4]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="8" transform="rotate(45 12 12)"/></svg>[Client 5]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M4 18 9 6l3 8 3-5 5 9Z"/></svg>[Client 6]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>[Client 7]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>[Client 8]</li></ul>
+                <ul aria-hidden="true"><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>[Client 1]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>[Client 2]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3 21 20H3Z"/></svg>[Client 3]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9Z"/></svg>[Client 4]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="8" transform="rotate(45 12 12)"/></svg>[Client 5]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M4 18 9 6l3 8 3-5 5 9Z"/></svg>[Client 6]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>[Client 7]</li><li><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>[Client 8]</li></ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Two-thirds of the showreel shows on the first screen, so people scroll. -->
-        <div class="hero-video">
-          <div class="showreel" data-grow>
-            <div class="aura" aria-hidden="true">
-              <span class="blob b1"></span>
-              <span class="blob b3"></span>
-              <span class="blob b5"></span>
-            </div>
-            <span class="media-ph top">What we do</span>
-            <span class="play play-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
-            <div class="showreel-foot">
-              <p class="showreel-title">Moxy.art <em>Showreel</em></p>
-              <p>Brooklyn, NY · 2026</p>
+        <!-- Reels-style phone cards drift left; two-thirds show on the first screen. script.js duplicates the set for a seamless loop. -->
+        <div class="hero-reels" id="work" aria-label="Recent work">
+          <div class="rail">
+            <div class="rail-track">
+              <div class="rail-set">
+              <article class="reelcard" style="--y: 0px">
+                <div class="reelcard-phone">
+                  <video class="lazy-video" src="media/gyuzo-summer-cocktails.mp4" poster="media/posters/gyuzo-summer-cocktails.jpg" muted loop playsinline preload="none" aria-label="Summer cocktails at Gyuzo"></video>
+                  <div class="reelcard-ui" aria-hidden="true">
+                    <div class="reelcard-top"><span>Reels</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+                    <div class="reelcard-actions"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5Z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div>
+                    <div class="reelcard-meta">
+                      <div class="reelcard-user"><span class="reelcard-avatar">G</span>gyuzobbqny<span class="reelcard-follow">Follow</span></div>
+                      <p>Summer cocktails at Gyuzo</p>
+                      <div class="reelcard-audio"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Original audio</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="reelcard" style="--y: 48px">
+                <div class="reelcard-phone">
+                  <video class="lazy-video" src="media/gyuzo-birthday-celebration.mp4" poster="media/posters/gyuzo-birthday-celebration.jpg" muted loop playsinline preload="none" aria-label="Birthday celebration at Gyuzo"></video>
+                  <div class="reelcard-ui" aria-hidden="true">
+                    <div class="reelcard-top"><span>Reels</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+                    <div class="reelcard-actions"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5Z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div>
+                    <div class="reelcard-meta">
+                      <div class="reelcard-user"><span class="reelcard-avatar">G</span>gyuzobbqny<span class="reelcard-follow">Follow</span></div>
+                      <p>Birthday celebration at Gyuzo</p>
+                      <div class="reelcard-audio"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Original audio</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="reelcard" style="--y: 0px">
+                <div class="reelcard-phone">
+                  <video class="lazy-video" src="media/gyuzo-birthday-free-meal.mp4" poster="media/posters/gyuzo-birthday-free-meal.jpg" muted loop playsinline preload="none" aria-label="Birthday eats free"></video>
+                  <div class="reelcard-ui" aria-hidden="true">
+                    <div class="reelcard-top"><span>Reels</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+                    <div class="reelcard-actions"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5Z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div>
+                    <div class="reelcard-meta">
+                      <div class="reelcard-user"><span class="reelcard-avatar">G</span>gyuzobbqny<span class="reelcard-follow">Follow</span></div>
+                      <p>Birthday eats free</p>
+                      <div class="reelcard-audio"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Original audio</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="reelcard" style="--y: 48px">
+                <div class="reelcard-phone">
+                  <video class="lazy-video" src="media/gyuzo-happy-hour-50off.mp4" poster="media/posters/gyuzo-happy-hour-50off.jpg" muted loop playsinline preload="none" aria-label="All-day happy hour, 50% off"></video>
+                  <div class="reelcard-ui" aria-hidden="true">
+                    <div class="reelcard-top"><span>Reels</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+                    <div class="reelcard-actions"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5Z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div>
+                    <div class="reelcard-meta">
+                      <div class="reelcard-user"><span class="reelcard-avatar">G</span>gyuzobbqny<span class="reelcard-follow">Follow</span></div>
+                      <p>All-day happy hour, 50% off</p>
+                      <div class="reelcard-audio"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Original audio</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="reelcard" style="--y: 0px">
+                <div class="reelcard-phone">
+                  <video class="lazy-video" src="media/gyuzo-meat-lovers-39.mp4" poster="media/posters/gyuzo-meat-lovers-39.jpg" muted loop playsinline preload="none" aria-label="Unlimited premium cuts for $39.50"></video>
+                  <div class="reelcard-ui" aria-hidden="true">
+                    <div class="reelcard-top"><span>Reels</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+                    <div class="reelcard-actions"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z"/></svg><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5Z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div>
+                    <div class="reelcard-meta">
+                      <div class="reelcard-user"><span class="reelcard-avatar">G</span>gyuzobbqny<span class="reelcard-follow">Follow</span></div>
+                      <p>Unlimited premium cuts for $39.50</p>
+                      <div class="reelcard-audio"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Original audio</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              </div>
             </div>
           </div>
         </div>
@@ -117,8 +184,8 @@
            copying a .case card. -->
       <section class="proof container" id="proof" aria-labelledby="proof-title">
         <div class="section-top" data-reveal>
-          <h2 id="proof-title" class="title-mix">Receipts, <span class="serif"><em>not adjectives.</em></span></h2>
-          <p class="lead">Real results from Gyuzo BBQ, a Japanese BBQ spot we market every month.</p>
+          <h2 id="proof-title" class="title-mix">Real numbers, <span class="serif"><em>Trust the results</em></span></h2>
+          <p class="lead">we believe in data</p>
         </div>
         <ul class="stats" data-reveal>
           <li><strong class="stat-num">$[##]K</strong><span>in sales from our Gyuzo ads, [month]–[month] 2026</span></li>
@@ -145,61 +212,7 @@
       <!-- RECENT WORK: drifting row of video cards. Each card's <video> plays
            by itself when it scrolls into view. To add one, put the file in media/,
            a still frame in media/posters/, and copy an existing card. -->
-      <section class="work" id="work" aria-labelledby="work-title">
-        <div class="container section-top" data-reveal>
-          <h2 id="work-title" class="title-mix"><span class="serif">Some of our</span> recent work:</h2>
-          <p class="hint">Hover to pause</p>
-        </div>
-
-        <div class="rail">
-          <div class="rail-track">
-            <div class="rail-set">
-              <article class="vcard" style="--w: 290px; --h: 520px; --y: 0px">
-                <div class="media" style="--bg: #000000">
-                  <video class="lazy-video" src="media/gyuzo-summer-cocktails.mp4" poster="media/posters/gyuzo-summer-cocktails.jpg" muted loop playsinline preload="none" aria-label="Summer cocktails at Gyuzo"></video>
-                  <span class="chip"><i></i>Summer cocktails</span>
-                </div>
-                <span class="tag">Gyuzo BBQ</span>
-                <p>Summer cocktails at Gyuzo</p>
-              </article>
-              <article class="vcard" style="--w: 420px; --h: 420px; --y: 40px">
-                <div class="media" style="--bg: #000000">
-                  <video class="lazy-video" src="media/gyuzo-birthday-celebration.mp4" poster="media/posters/gyuzo-birthday-celebration.jpg" muted loop playsinline preload="none" aria-label="Birthday celebration at Gyuzo"></video>
-                  <span class="chip"><i></i>Birthday</span>
-                </div>
-                <span class="tag">Gyuzo BBQ</span>
-                <p>Birthday celebration at Gyuzo</p>
-              </article>
-              <article class="vcard" style="--w: 420px; --h: 420px; --y: 0px">
-                <div class="media" style="--bg: #000000">
-                  <video class="lazy-video" src="media/gyuzo-birthday-free-meal.mp4" poster="media/posters/gyuzo-birthday-free-meal.jpg" muted loop playsinline preload="none" aria-label="Birthday eats free"></video>
-                  <span class="chip"><i></i>Birthday</span>
-                </div>
-                <span class="tag">Gyuzo BBQ</span>
-                <p>Birthday eats free</p>
-              </article>
-              <article class="vcard" style="--w: 420px; --h: 420px; --y: 40px">
-                <div class="media" style="--bg: #000000">
-                  <video class="lazy-video" src="media/gyuzo-happy-hour-50off.mp4" poster="media/posters/gyuzo-happy-hour-50off.jpg" muted loop playsinline preload="none" aria-label="All-day happy hour, 50% off"></video>
-                  <span class="chip"><i></i>Happy hour</span>
-                </div>
-                <span class="tag">Gyuzo BBQ</span>
-                <p>All-day happy hour, 50% off</p>
-              </article>
-              <article class="vcard" style="--w: 290px; --h: 520px; --y: 0px">
-                <div class="media" style="--bg: #000000">
-                  <video class="lazy-video" src="media/gyuzo-meat-lovers-39.mp4" poster="media/posters/gyuzo-meat-lovers-39.jpg" muted loop playsinline preload="none" aria-label="Unlimited premium cuts for $39.50"></video>
-                  <span class="chip"><i></i>Ad</span>
-                </div>
-                <span class="tag">Gyuzo BBQ</span>
-                <p>Unlimited premium cuts for $39.50</p>
-              </article>
-            </div>
-            <!-- script.js copies the set above here so the row loops seamlessly -->
-          </div>
-        </div>
-      </section>
-
+      
 
       <!-- FINISHED CONTENT: showreel grows as it scrolls in, Reels float -->
       <section class="reel container" aria-labelledby="reel-title">
@@ -277,17 +290,17 @@
           <li data-reveal>
             <span class="step-num" aria-hidden="true">01</span>
             <h3>Free 20‑min call</h3>
-            <p>We look at your posts, ads and goals together.</p>
+            <p>Hop on a call to find the best plan for your Meta spend. Tell us about your brand — your offer, audience, assets, and goals.</p>
           </li>
           <li data-reveal>
             <span class="step-num" aria-hidden="true">02</span>
             <h3>30‑day plan</h3>
-            <p>A content and ad plan you approve before anything goes live.</p>
+            <p>Your dedicated strategist digs into your market and builds the angles, hooks, and ideas worth executing.</p>
           </li>
           <li data-reveal>
             <span class="step-num" aria-hidden="true">03</span>
             <h3>Launch &amp; report</h3>
-            <p>We run it, then show you the results every month.</p>
+            <p>Receive your human-made designs within 3 business days. We will also run it, then show you the results every month.</p>
           </li>
         </ol>
       </section>
@@ -324,6 +337,11 @@
             <a class="btn btn-cta btn-lg" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Book My Free 20-Min Call <span class="btn-arrow" aria-hidden="true">→</span></a>
             <p class="fine-print">No pressure, no jargon.</p>
             <a class="ink-link" href="mailto:moxyart664@gmail.com">moxyart664@gmail.com <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-calendar" data-reveal>
+            <h3 class="contact-calendar-title">Pick a time that works for you</h3>
+            <iframe class="calendar-frame" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2eSPQ7FINA05D1iOtCj9nGhe5a6Q4GsRkn1vp0aSwzwerRgyqd4dUTIXkZb8Qcn--GOcK87Ekz?gv=true" title="Book a free 20-minute call" loading="lazy"></iframe>
+            <p class="fine-print">Calendar not loading? <a class="ink-link" href="https://calendar.app.google/xC5aTehPTgfjE6WX9" target="_blank" rel="noopener">Open it in a new tab ↗</a></p>
           </div>
         </div>
       </section>
